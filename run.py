@@ -64,13 +64,12 @@ def verify_deployment(deployment):
         return '"environment" missing from deployment json'
     if 'urls' not in deployment:
         return '"urls" missing from deployment json'
-    # callback is optional
-    #if 'callback' not in deployment:
-    #    return '"callback" missing from deployment json'
     if 'team' not in deployment:
         return '"team" missing from deployment json'
     if not isinstance(deployment['urls'], list):
-        return '"urls" in deployment json is not a list'
+        return '"urls" in deployment json is not an array'
+    if len(deployment['urls']) < 1:
+        return '"urls" must contain atleast one url to scan'
     return None
 
 def process_url_to_scan(deployment, url_to_scan):
