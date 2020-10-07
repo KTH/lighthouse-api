@@ -56,15 +56,15 @@ def process_deployment(deployment):
     return deployment, None
 
 def verify_deployment(deployment):
-    if 'application' not in deployment:
+    if 'application' not in deployment or not deployment['application']:
         return '"application" missing from deployment json'
-    if 'commit' not in deployment:
+    if 'commit' not in deployment or not deployment['commit']:
         return '"commit" missing from deployment json'
-    if 'environment' not in deployment:
+    if 'environment' not in deployment or not deployment['environment']:
         return '"environment" missing from deployment json'
-    if 'urls' not in deployment:
+    if 'urls' not in deployment or not deployment['urls']:
         return '"urls" missing from deployment json'
-    if 'team' not in deployment:
+    if 'team' not in deployment or not deployment['team']:
         return '"team" missing from deployment json'
     if not isinstance(deployment['urls'], list):
         return '"urls" in deployment json is not an array'
