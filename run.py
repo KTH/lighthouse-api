@@ -33,11 +33,11 @@ executor.add_default_done_callback(process_callback)
 logging.basicConfig(level=logging.DEBUG, format='%(message)s')
 
 
-@app.route('/lighthouse-api/_monitor', methods=['GET'])
+@app.route('/api/lighthouse/_monitor', methods=['GET'])
 def monitor():
     return 'APPLICATION_STATUS: OK'
 
-@app.route('/lighthouse-api', methods=['POST'])
+@app.route('/api/lighthouse', methods=['POST'])
 def create_report():
     logger = logging.getLogger(__name__)
     if not request.is_json:
