@@ -5,6 +5,8 @@ WORKDIR repo
 COPY pyproject.toml pyproject.toml
 COPY poetry.lock poetry.lock
 COPY run.py run.py
+COPY environment.py environment.py
+COPY process.py process.py
 
 RUN apk update && \
     apk upgrade && \
