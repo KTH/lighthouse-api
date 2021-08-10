@@ -1,4 +1,4 @@
-# lighthouse-api
+# Google Lighthouse API  ![Continous Integration](https://github.com/KTH/lighthouse-api/actions/workflows/main.yml/badge.svg)
 API for generating lightouse reports
 
 ## Usage
