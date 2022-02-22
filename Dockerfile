@@ -1,12 +1,6 @@
-FROM kthse/kth-python:3.8.0
+FROM kthse/kth-python:3.10.0
 
 WORKDIR repo
-
-COPY pyproject.toml pyproject.toml
-COPY poetry.lock poetry.lock
-COPY run.py run.py
-COPY environment.py environment.py
-COPY process.py process.py
 
 RUN apk update && \
     apk upgrade && \
@@ -23,9 +17,15 @@ RUN apk update && \
             cargo
             
 # poetry does not yet work with Python 3.10
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+RUN wget -q -O - "$@" https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 ENV PATH = "${PATH}:/root/.poetry/bin"
 ENV FLASK_APP=run.py
+
+COPY pyproject.toml pyproject.toml
+COPY poetry.lock poetry.lock
+COPY run.py run.py
+COPY environment.py environment.py
+COPY process.py process.py
 
 RUN poetry install
 
