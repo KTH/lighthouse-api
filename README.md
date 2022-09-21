@@ -22,3 +22,4 @@ Filenames are on the format [application]\_[commit]_[url-path].[json|html]
 ## Example
 
 `curl -XPOST --data '{"application":"test", "team":"team-pipeline", "commit":"123567", "environment":"test", "urls":["https://www.kth.se"], "callback":"https://www.kth.se"}' --header "Content-type: application/json" https://api.kth.se/api/lighthouse `
+
