@@ -23,7 +23,7 @@ COPY lighthouse-api.py lighthouse-api.py
 COPY environment.py environment.py
 COPY process.py process.py
 
-RUN poetry install
+RUN pipenv install
 
 CMD FLASK_APP=lighthouse-api.py pipenv run flask run --host=0.0.0.0
 
