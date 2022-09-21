@@ -1,3 +1,3 @@
 #!/bin/sh
 
-FLASK_APP=run.py poetry run flask run
+FLASK_APP=lighthouse-api.py pipenv run flask run
