@@ -19,7 +19,6 @@ jobs:
       - name: Run Evolene CI pipeline steps
         env:
           SLACK_CHANNELS: "#team-pipeline-build"
-          PUSH_PUBLIC: True
         run: |
           ${{ secrets.EVOLENE_RUN_COMMAND }}
 
