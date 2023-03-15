@@ -1,4 +1,4 @@
-FROM kthse/kth-python:3.10.0
+FROM kthregistry.azurecr.io/kth-python:3.10.0
 
 WORKDIR repo
 
